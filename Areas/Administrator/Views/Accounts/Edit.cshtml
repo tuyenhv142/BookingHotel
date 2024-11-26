@@ -1,0 +1,77 @@
+﻿@model BookingHotel.Models.Account
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pagetitle">
+    <h1>Account</h1>
+    <nav>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Accounts" asp-action="Index">Account</a></li>
+        <li class="breadcrumb-item active">Edit</li>
+        </ol>
+    </nav>
+</div><!-- End Breadcrumbs with a page title -->
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="AccountId" />
+    <div class="row mb-3" >
+        <label for="inputText" class="col-sm-2 col-form-label">Tên tài khoản</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="AccountName">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountName)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Email đăng nhập</label>
+        <div class="col-sm-10">
+        <input type="email" class="form-control"asp-for="AccountEmail">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountEmail)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Số điện thoại</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="AccountPhone">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountPhone)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputDate" class="col-sm-2 col-form-label">Địa chỉ</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="AccountAddress">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountAddress)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Thông tin</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="AccountAbout"></textarea>
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountAbout)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Chức vụ</label>
+        <div class="col-sm-10">
+        <select class="form-select" asp-for="PositionId" aria-label="Default select example" asp-items="ViewBag.Position" >
+            <option disabled selected value="0">Phòng</option>
+        </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputDate" class="col-sm-2 col-form-label">Mật khẩu</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="AccountPassword">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountPassword)</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-10">
+        <button type="submit" class="btn btn-success rounded-pill">Save</button>
+        </div>
+    </div>
+
+</form><!-- End General Form Elements -->
+

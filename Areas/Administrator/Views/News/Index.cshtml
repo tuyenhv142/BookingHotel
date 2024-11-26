@@ -1,0 +1,96 @@
+﻿@model PagedList.Core.IPagedList<BookingHotel.Models.Page>
+@{
+    ViewData["Title"] = "Index" + ViewBag.pageNumber;
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    var pageCurrent = ViewBag.pageNumber;
+    var pageNext = pageCurrent + 1;
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="card-title mb-0">News</h5>
+            <a class="btn btn-success rounded-pill col-sm-1 ms-auto "asp-controller="News" asp-action="Create">Add</a>
+        </div>
+        <!-- Table with hoverable rows -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tiêu đề chính</th>
+                    <th scope="col">Thời gian</th>
+                    <th scope="col">Tiêu đề 1</th>
+                    <th scope="col">Tiêu đề 2</th>
+                    <th scope="col">Hình ảnh 1</th>
+                    <th scope="col">Hình ảnh 2</th>
+                    <th scope="col">Tác giả</th>
+                    <th scope="col">Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                        <tr>
+                            <th scope="row">@i.Id</th>
+                            <td>@i.Name</td>
+                            <td>@i.Time</td>
+                            <td>@i.Title1</td>
+                            <td>@i.Title2</td>
+                            <td>@i.Image</td>
+                            <td>@i.ImageMore</td>
+                            <td>@i.Author</td>
+                            <td>@i.Status</td>
+                            <td>
+                                    <a class="btn btn-outline-warning rounded-pill" asp-controller="News" asp-action="Edit" asp-route-id="@i.Id">Edit</a>    
+                            </td>
+                            <td>
+                                            <a class="btn btn-outline-danger rounded-pill" asp-controller="News" asp-action="Delete" onclick="return confirmDelete()" asp-route-id="@i.Id">Remove</a>
+                            </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with hoverable rows -->
+        <!-- Centered Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                @if (Model.HasPreviousPage)
+                {
+                        <li class="page-item ">
+                                <a class="page-link" href="/newsAdmin.html?page=@(pageCurrent-1)" tabindex="-1">Previous</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="page-item">
+                                <a class="page-link" href="/newsAdmin.html" tabindex="-1" style="display:none">Previous</a>
+                        </li> 
+                }
+
+                <li class="page-item"><a class="page-link" href="/newsAdmin.html?page=@pageCurrent">@pageCurrent</a></li>
+                @if (Model.HasNextPage)
+                {
+                        <li class="page-item">
+                                    <a class="page-link" href="/newsAdmin.html?page=@pageNext" >Next</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="page-item">
+                                    <a class="page-link" href="/newsAdmin.html?page=@pageNext" style="display:none">Next</a>
+                        </li>
+                }
+            </ul>
+        </nav><!-- End Centered Pagination -->
+    </div>
+</div>
+<script>
+    function confirmDelete() {
+    if (confirm("Bạn có chắc chắn muốn xóa?")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>
+

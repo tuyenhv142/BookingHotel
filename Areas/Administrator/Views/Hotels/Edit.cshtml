@@ -1,0 +1,95 @@
+﻿@model BookingHotel.Models.Hotel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pagetitle">
+    <h1>Hotel</h1>
+    <nav>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Hotels" asp-action="Index">Hotel</a></li>
+        <li class="breadcrumb-item active">Edit</li>
+        </ol>
+    </nav>
+</div><!-- End Breadcrumbs with a page title -->
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="HotelId" />
+    <div class="row mb-3" >
+        <label for="inputText" class="col-sm-2 col-form-label">Tên khách sạn</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="HotelName">
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelName"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Địa chỉ</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control"asp-for="HotelAddress">
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelAddress"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Số điện thoại</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="HotelPhone">
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelPhone"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hạng khách sạn</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="HotelType">
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelType"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hinh ảnh 1 </label>
+        <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" asp-for="HotelImage">
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelImage"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hinh ảnh 2</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" asp-for="HotelMoreImage">
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelMoreImage"></span>
+        </div>
+    </div>
+    @*<div class="row mb-3">
+        <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+        <div class="col-sm-10">
+        <input type="date" class="form-control">
+        </div>
+    </div>*@
+
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Mô tả</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="HotelDescription"></textarea>
+        <span class="badge border-danger border-1 text-danger" asp-validation-for="HotelDescription"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">HomeFlag</label>
+        <div class="col-sm-10">
+        <select class="form-select" aria-label="Default select example" asp-for="HotelFlag">
+            <option selected disabled>Open this select menu</option>
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <div class="col-sm-10">
+        <button type="submit" class="btn btn-success rounded-pill">Save</button>
+        </div>
+    </div>
+
+</form><!-- End General Form Elements -->

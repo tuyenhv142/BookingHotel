@@ -1,0 +1,103 @@
+﻿@model PagedList.Core.IPagedList<BookingHotel.Models.Room>
+
+@{
+    ViewData["Title"] = "Index" + ViewBag.CurrentPage;
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    int PageCurrent = ViewBag.CurrentPage;
+    int PageNext = PageCurrent + 1;
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="card-title mb-0">Room</h5>
+            <a class="btn btn-success rounded-pill col-sm-1 ms-auto " asp-action="Create">Add</a>
+        </div>
+@*        <div class="row mb-3 ">
+            <div class="col-sm-3">
+                <select class="form-select" aria-label="Default select example" asp-items="ViewBag.LoaiKhachSan">
+                    <option value="0" disabled selected>Chọn loại khách sạn</option>
+                </select>
+            </div>
+        </div>*@
+        <!-- Table with hoverable rows -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Tên phòng</th>
+                    <th scope="col">Độ rộng</th>
+                    <th scope="col">Loại giường</th>
+                    <th scope="col">Tiện ích</th>
+                    <th scope="col">Dịch vụ</th>
+                    <th scope="col">Giá phòng</th>
+                    <th scope="col">Hình ảnh</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Khách sạn</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                        <tr>
+                            <th>@i.RoomName</th>
+                            <td>@i.RoomSize</td>
+                            <td>@i.RoomBed</td>
+                            <td>@i.RoomUtilities</td>
+                            <td>@i.RoomService</td>
+                            <td>@i.RoomPrice.Value.ToString("#,##0")</td>
+                            <td>@i.RoomImage</td>
+                            <td>@i.RoomStatus</td>
+                            <td>@i.Hotel.HotelName</td>
+                            <td>
+                                <a class="btn btn-outline-warning rounded-pill" asp-controller="Rooms" asp-action="Edit" asp-route-id="@i.RoomId">Edit</a>    
+                            </td>
+                            <td>
+                                    <a class="btn btn-outline-danger rounded-pill" asp-controller="Rooms" asp-action="Delete" onclick="return confirmDelete()" asp-route-id="@i.RoomId">Remove</a>
+                            </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with hoverable rows -->
+        <!-- Centered Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                @if (Model.HasPreviousPage)
+                {
+                        <li class="page-item ">
+                                    <a class="page-link" href="/roomAdmin.html?page=@(PageCurrent-1)" tabindex="-1">Previous</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="page-item">
+                                <a class="page-link" href="/roomAdmin.html" tabindex="-1" style="display:none">Previous</a>
+                        </li> 
+                }
+
+                <li class="page-item"><a class="page-link" href="/roomAdmin.html?page=@PageCurrent">@PageCurrent</a></li>
+                @if (Model.HasNextPage)
+                {
+                        <li class="page-item">
+                                    <a class="page-link" href="/roomAdmin.html?page=@PageNext" >Next</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="page-item">
+                                    <a class="page-link" href="/roomAdmin.html?page=@PageNext" style="display:none">Next</a>
+                        </li>
+                }
+            </ul>
+        </nav><!-- End Centered Pagination -->
+    </div>
+</div>
+<script>
+    function confirmDelete() {
+    if (confirm("Bạn có chắc chắn muốn xóa?")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>

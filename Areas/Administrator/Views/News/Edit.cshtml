@@ -1,0 +1,122 @@
+﻿@model BookingHotel.Models.Page;
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pagetitle">
+    <h1>News</h1>
+    <nav>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="News" asp-action="Index">News</a></li>
+        <li class="breadcrumb-item active">Edit</li>
+        </ol>
+    </nav>
+</div><!-- End Breadcrumbs with a page title -->
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+        <div class="row mb-3">
+        <label for="inputText" class="col-sm-2 col-form-label">Tên tiều đề chính</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="Name" >
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Name)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Nôi dung</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="Content"></textarea>
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Content)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputDate" class="col-sm-2 col-form-label">Thời gian</label>
+        <div class="col-sm-10">
+        <input type="date" class="form-control" asp-for="Time" readonly>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Tiêu đề 1</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control"asp-for="Title1">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Title1)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Nôi dung tiều đề 1</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="Content1"></textarea>
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Content1)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Tiêu đề 2</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="Title2">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Title2)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Nôi dung tiều đề 2</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="Content2"></textarea>
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Content2)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Tiêu đề 3</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="Title3">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Title3)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Nôi dung tiều đề 3</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="Content3"></textarea>
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Content3)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hinh ảnh 1</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" asp-for="Image">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Image)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hinh ảnh 2</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" asp-for="ImageMore">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.ImageMore)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Tác giả</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="Author">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.Author)</i></span>   
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Trạng thái</label>
+        <div class="col-sm-10">
+            <select class="form-select" aria-label="Default select example" asp-for="Status">
+                <option disabled selected>Chọn trạng thái</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
+        <div class="col-sm-10">
+        <button type="submit" class="btn btn-success rounded-pill">Save</button>
+        </div>
+    </div>
+
+</form><!-- End General Form Elements -->
+

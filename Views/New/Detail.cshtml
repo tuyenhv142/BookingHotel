@@ -1,0 +1,106 @@
+﻿@model BookingHotel.Models.Page
+@{
+    ViewData["Title"] = "Detail";
+    string url = $"/tin-tuc/{Model.Id}.html";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Page> pages = ViewBag.lsNew;
+}
+
+<!-- Blog Details Hero Section Begin -->
+    <section class="blog-details-hero set-bg" data-setbg="~/img/hero/hero-1.jpg" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="bd-hero-text">
+                        <h2 style="color:#000000">@Model.Name</h2>
+                        <ul>
+                            <li class="b-time"><i class="icon_clock_alt"></i> @Model.Time</li>
+                            <li><i class="icon_profile"></i> @Model.Author</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Hero End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details-section">
+        <div class="container">
+            <div class="row">
+                <img src="~/img/hero/@Model.ImageMore" alt="">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="blog-details-text">
+                        <div class="bd-title">
+                            <p>@Model.Content</p>
+                        </div>
+                        <div class="bd-pic">
+                            <div class="bp-item">
+                                <img src="~/img/blog/blog-details-1.jpg" alt="">
+                            </div>
+                            <div class="bp-item">
+                                <img src="~/img/blog/blog-details-2.jpg" alt="">
+                            </div>
+                            <div class="bp-item">
+                                <img src="~/img/blog/blog-details-3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="bd-more-text">
+                            <div class="bm-item">
+                                <h4>@Model.Title1</h4>
+                                <p>@Model.Content1</p>
+                            </div>
+                            <div class="bm-item">
+                                <h4>@Model.Title2</h4>
+                                <p>@Model.Content2</p>
+                            </div>
+                            <div class="bm-item">
+                                <h4>@Model.Title3</h4>
+                                <p>@Model.Content3</p>
+                            </div>
+                        </div>
+                        <div class="tag-share">
+                            <div class="social-share">
+                                <span>Share:</span>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+        <!-- Blog Section Begin -->
+    <section class="blog-section blog-page spad">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Các tin tức khác</h2>
+                </div>
+            </div>
+            <div class="row">
+            @foreach (var i in pages)
+                {
+                    string url1 = $"/tin-tuc/{i.Id}.html";
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <img src="~/img/blog/@i.Image" alt="">
+                            <div class="ri-text">
+                                <h4>@i.Name</h4>
+                                <h3><span>@i.Time</span></h3>
+                                <a href="@url1" class="primary-btn">Xem thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>               
+        </div>
+    </section>
+    <!-- Blog Section End -->
+
+

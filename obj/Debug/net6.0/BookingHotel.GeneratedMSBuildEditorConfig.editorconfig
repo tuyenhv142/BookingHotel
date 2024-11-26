@@ -1,0 +1,173 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BookingHotel
+build_property.RootNamespace = BookingHotel
+build_property.ProjectDir = /Users/macbook/Downloads/BookingHotel/BookingHotel/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = /Users/macbook/Downloads/BookingHotel/BookingHotel
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Accounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9BY2NvdW50cy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9BY2NvdW50cy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9BY2NvdW50cy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Bookings/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Cb29raW5ncy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Bookings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Cb29raW5ncy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Bookings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Cb29raW5ncy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Ib21lL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Hotels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Ib3RlbHMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Hotels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Ib3RlbHMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Hotels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Ib3RlbHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Mb2dpbi9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/News/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9OZXdzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/News/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9OZXdzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9OZXdzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Profile/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Qcm9maWxlL0NoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Profile/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Qcm9maWxlL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Qcm9maWxlL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Rooms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Sb29tcy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Rooms/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Sb29tcy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Rooms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9Sb29tcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9TaGFyZWQvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/SupportOnlines/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9TdXBwb3J0T25saW5lcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Areas/Administrator/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW5pc3RyYXRvci9WaWV3cy9fVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWJvdXQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Booking/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va2luZy9TdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29udGFjdC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Hotel/Booking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWwvQm9va2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Hotel/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWwvRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Hotel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG90ZWwvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/New/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTmV3L0RldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/New/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTmV3L0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/macbook/Downloads/BookingHotel/BookingHotel/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nokatqdmzj

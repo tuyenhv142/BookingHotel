@@ -1,0 +1,99 @@
+﻿@model BookingHotel.Models.Room
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pagetitle">
+    <h1>Room</h1>
+    <nav>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Rooms" asp-action="Index">Room</a></li>
+        <li class="breadcrumb-item active">Create</li>
+        </ol>
+    </nav>
+</div><!-- End Breadcrumbs with a page title -->
+<form asp-action="Create">
+    <div class="row mb-3">
+        <label for="inputText" class="col-sm-2 col-form-label">Tên Phòng</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="RoomName" >
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomName)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Độ rộng</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control"asp-for="RoomSize">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomSize)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Loại giường</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="RoomBed">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomBed)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Tiện ích</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" asp-for="RoomUtilities">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomUtilities)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Giá phòng</label>
+        <div class="col-sm-10">
+        <input type="number" class="form-control" asp-for="RoomPrice">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomPrice)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hinh ảnh 1</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" asp-for="RoomImage">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomImage)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputNumber" class="col-sm-2 col-form-label">Hinh ảnh 2</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="file" id="formFile" asp-for="RoomMoreImage">
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomMoreImage)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Mô tả</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" style="height: 200px" asp-for="RoomService"></textarea>
+        <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(m => m.RoomService)</i></span>   
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Trạng thái</label>
+        <div class="col-sm-10">
+            <select class="form-select" aria-label="Default select example" asp-for="RoomStatus">
+                <option disabled selected>Chọn trạng thái</option>
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Khách sạn</label>
+        <div class="col-sm-10">
+        <select class="form-select" aria-label="Default select example" asp-for="HotelId" asp-items="ViewBag.LoaiKhachSan">
+            <option disabled selected value="0">Chọn khách sạn</option>
+        </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-10">
+        <button type="submit" class="btn btn-success rounded-pill">Save</button>
+        </div>
+    </div>
+
+</form><!-- End General Form Elements -->
+

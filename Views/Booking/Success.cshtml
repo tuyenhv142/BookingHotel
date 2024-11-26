@@ -1,0 +1,127 @@
+﻿@model BookingHotel.Models.Booking
+@{
+    ViewData["Title"] = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Room room = ViewBag.Room;
+}
+
+<div class="container">
+
+    <section class="section error-404 min-vh-100 d-flex flex-column align-items-center ">
+        <h2>SONA xin cám ơn Quý khách.</h2>
+        
+        <img src="~/assets/img/banner_confirm.png" class="img-fluid py-5" alt="Page Not Found">
+        <h5 style="text-align:center">Chúng tôi đang xử lý đơn hàng của bạn và sẽ liên hệ lại bạn trong thời gian sớm nhất để hoàn tất giao dịch.<br>Mọi thắc mắc xin liên hệ: 0372981353 hoặc email: hoangmit202@gmail.com để được hỗ trợ kịp thời.</h5>
+    <!-- Chi tiết đặt phòng -->
+        <div class="card mb-3" style="margin:50px 0 0 0">
+            <div class="row g-2">
+                <div class="col-md-4" style="text-align:center">
+                <img src="~/img/room/@Model.Room.RoomImage"  alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@room.Hotel.HotelName</h5>
+                        <p class="card-text">Phòng : <span style="color:#000000">@Model.Room.RoomName</span></p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Chi tiết hóa đơn đặt phòng</h5>
+                            <table class="table">
+                            <thead>
+                                <tr>
+
+                                <td scope="col"><i class="bi bi-upc"></i>  Mã đặt phòng</td>
+                                <th style="color:blue">@Model.BookingId</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                <td scope="col"><i class="bi bi-calendar2-check"></i>  Ngày nhận phòng</td>
+                                <th >@Model.BookingStartDate</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                <td scope="col"><i class="bi bi-calendar-x"></i>  Ngày trả phòng</td>
+                                <th >@Model.BookingEndDate</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                <td scope="col"><i class="bi bi-currency-dollar"></i>  Tổng tiền </td>
+                                <th style="color:orangered">@Model.BookingTotalMoney.Value.ToString("#,##0") VND</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Thông tin liên hệ</h5>
+                            <table class="table">
+                            <thead>
+                                <tr>
+
+                                <td scope="col"><i class="bi bi-person"></i>  Họ và tên</td>
+                                <th>@Model.CustomerName</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                <td scope="col"><i class="bi bi-envelope"></i>  Địa chỉ Email</td>
+                                <th >@Model.CustomerEmail</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                <td scope="col"><i class="bi bi-telephone"></i>  Số điện thoại </td>
+                                <th >@Model.CustomerPhone</th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                <td scope="col"><i class="bi bi-layout-text-sidebar-reverse"></i>  Yêu cầu đặc biệt thêm </td>
+                                <th ></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn" asp-controller="Home" asp-action="Index">Trang chủ</a>
+    </section>
+
+</div>
+
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="~/assets/css/style.css" rel="stylesheet">
+   <!-- Vendor JS Files -->
+  <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="~/assets/vendor/chart.js/chart.min.js"></script>
+  <script src="~/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="~/assets/vendor/quill/quill.min.js"></script>
+  <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="~/assets/js/main.js"></script>
+

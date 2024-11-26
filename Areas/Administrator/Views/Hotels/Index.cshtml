@@ -1,0 +1,102 @@
+﻿@model PagedList.Core.IPagedList<BookingHotel.Models.Hotel> 
+
+@{
+    ViewData["Title"] = "Index" + ViewBag.CurrentPage;
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+    int PageCurrent = ViewBag.CurrentPage;
+    int PageNext = PageCurrent + 1;
+
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="card-title mb-0">Hotel</h5>
+            <a class="btn btn-success rounded-pill col-sm-1 ms-auto " asp-action="Create">Add</a>
+        </div>
+        <div class="row mb-3 ">
+            <div class="col-sm-3">
+                <select class="form-select" aria-label="Default select example" asp-items="ViewBag.loaiKhachSan">
+                    <option value="0" disabled selected>Chọn loại khách sạn</option>
+                </select>
+            </div>
+        </div>
+        <!-- Table with hoverable rows -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tên khách sạn</th>
+                    <th scope="col">Địa chỉ</th>
+                    <th scope="col">Hình ảnh 1</th>
+                    <th scope="col">Hình ảnh 2</th>
+                    <th scope="col">Nổi bật</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Hạng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <th scope="row">@i.HotelId</th>
+                        <td>@i.HotelName</td>
+                        <td>@i.HotelAddress</td>
+                        <td>@i.HotelImage</td>
+                        <td>@i.HotelMoreImage</td>
+                        <td>@i.HotelFlag</td>
+                        <td>@i.HotelPhone</td>
+                        <td>@i.HotelType</td>
+                        <td>
+                            <a class="btn btn-outline-warning rounded-pill" asp-controller="Hotels" asp-action="Edit" asp-route-id="@i.HotelId">Edit</a>    
+                        </td>
+                        <td>
+                                <a class="btn btn-outline-danger rounded-pill" asp-controller="Hotels" asp-action="Delete" onclick="return confirmDelete()" asp-route-id="@i.HotelId">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- End Table with hoverable rows -->
+        <!-- Centered Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                @if (Model.HasPreviousPage)
+                {
+                        <li class="page-item ">
+                                    <a class="page-link" href="/hotelAdmin.html?page=@(PageCurrent-1)" tabindex="-1">Previous</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="page-item">
+                                <a class="page-link" href="/hotelAdmin.html" tabindex="-1" style="display:none">Previous</a>
+                        </li> 
+                }
+
+                <li class="page-item"><a class="page-link" href="/hotelAdmin.html?page=@PageCurrent">@PageCurrent</a></li>
+                @if (Model.HasNextPage)
+                {
+                        <li class="page-item">
+                                    <a class="page-link" href="/hotelAdmin.html?page=@PageNext" >Next</a>
+                        </li>
+                }
+                else
+                {
+                        <li class="page-item">
+                                    <a class="page-link" href="/hotelAdmin.html?page=@PageNext" style="display:none">Next</a>
+                        </li>
+                }
+            </ul>
+        </nav><!-- End Centered Pagination -->
+    </div>
+</div>
+<script>
+    function confirmDelete() {
+    if (confirm("Bạn có chắc chắn muốn xóa?")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>

@@ -1,0 +1,201 @@
+﻿
+@{
+    ViewData["Title"] = "Index"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Hotel> hotels = ViewBag.lsHotel;
+    List<Page> pages = ViewBag.news;
+}
+<!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-text">
+                    <h1>Sona Web Booking Hotel</h1>
+                    <p>Sona là trang web đặt phòng khách sạn tốt nhất, bao gồm các đề xuất cho du lịch và tìm phòng khách sạn giá rẻ.</p>
+                    @*<a href="#" class="primary-btn">Discover Now</a>*@
+                </div>
+            </div>
+             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+                <div class="booking-form">
+                    <h3>Tìm kiếm khách sạn</h3>
+                    @using (Html.BeginForm("Search", "Home"))
+                    {
+                        <div class="check-date">
+                            <label for="date-in">Địa điểm hoặc tên Khách sạn:</label>
+                            <input type="text" name="search">
+                        </div>
+                        <button type="submit">Tìm kiếm</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-3.jpg"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- About Us Section Begin -->
+<section class="aboutus-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-text">
+                    <div class="section-title">
+                        <span>Về chúng tôi</span>
+                        <h2>Sona WEB <br />Booking Hotel</h2>
+                    </div>
+                    <p class="f-para">Sona.com là một trang web lưu trú trực tuyến hàng đầu. Chúng tôi đam mê du lịch. Mỗi ngày, chúng tôi truyền cảm hứng và tiếp cận hàng triệu khách du lịch trên 90 trang web địa phương bằng 41 ngôn ngữ.</p>
+                    <p class="s-para">Vì vậy, khi nói đến việc đặt khách sạn hoàn hảo, nhà nghỉ cho thuê, khu nghỉ dưỡng, căn hộ, nhà khách hoặc nhà trên cây, chúng tôi sẽ hỗ trợ bạn.</p>
+                    @*<a href="#" class="primary-btn about-btn">Read More</a>*@
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-pic">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="~/img/about/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="~/img/about/about-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section End -->
+
+<!-- Rooms Section Begin -->
+<section class="blog-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Khách sạn</span>
+                    <h2>Địa Điểm Khách Sạn Nổi Bật</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="tbody">
+        @foreach (var i in hotels)
+        {
+            string url = $"/khach-san/{i.HotelId}.html";
+            <div class="col-lg-4">
+                <div class="blog-item set-bg" data-setbg="img/blog/@i.HotelImage">
+                    <div class="bi-text">
+                        <span class="b-tag">@i.HotelType</span>
+                        <h4><a href="@url">@i.HotelName</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i>@i.HotelAddress</div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+</section>
+<!-- Rooms Section End -->
+
+<!-- Services Section End -->
+<section class="services-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Những gì bạn cần</span>
+                    <h2>Khách Sạn Của Chúng Tôi Đều Có</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-036-parking"></i>
+                    <h4>Travel Plan</h4>
+                    @*                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>*@
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-033-dinner"></i>
+                    <h4>Catering Service</h4>
+                    @*                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>*@
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-026-bed"></i>
+                    <h4>Babysitting</h4>
+                    @*                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>*@
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-024-towel"></i>
+                    <h4>Laundry</h4>
+                    @*                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>*@
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-044-clock-1"></i>
+                    <h4>Hire Driver</h4>
+                    @*                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>*@
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-012-cocktail"></i>
+                    <h4>Bar & Drink</h4>
+                    @*                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+
+<!-- News Section Begin -->
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>TIN Tức</span>
+                    <h2>Tin Tức Mới Nổi Bật</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var i in pages)
+            {
+                string url = $"/tin-tuc/{i.Id}.html";
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <img src="~/img/blog/@i.Image" alt="">
+                        <div class="ri-text">
+                            <h4>@i.Name</h4>
+                            <h3><span>@i.Time</span></h3>
+                            <a href="@url" class="primary-btn">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            }           
+        </div>
+    </div>
+</section>
+<!-- News Section End -->
+
+
+

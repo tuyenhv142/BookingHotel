@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BookingHotel.Models.Hotel>
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var search = ViewBag.lsHotel;
+}
+
+<!-- Breadcrumb Section Begin -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    @*<h2>Khách sạn @search</h2>*@
+                    <div class="bt-option">
+                        <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                        <span>Địa điểm : @search</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<section class="blog-section blog-page spad">
+    <div class="container">
+        <div class="row">
+            @foreach (var i in Model)
+            {
+                string url = $"/khach-san/{i.HotelId}.html";
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <img src="~/img/blog/@i.HotelImage" alt="">
+                        <div class="ri-text">
+                            <a href="@url">  
+                                <h4>@i.HotelName</h4>
+                                <h3>@i.HotelPrice.Value.ToString("#,##0") VND<span>/Giá trung bình</span></h3>
+                                <h3><span style="color:black">@i.HotelAddress</span></h3>
+                                <a href="@url" class="primary-btn">@i.HotelPhone</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>               
+    </div>
+</section>
+

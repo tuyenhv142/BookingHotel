@@ -1,0 +1,155 @@
+﻿@using System.Globalization;
+@model BookingHotel.Models.Booking
+@{
+    ViewData["Title"] = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Room Room = ViewBag.Room;
+    string url1 = $"/khach-san/{Room.Hotel.HotelId}.html";
+    string url = $"/thanh-toan/{Room.RoomId}.html";
+    int day;
+
+}
+
+ <!-- Breadcrumb Section Begin -->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Đặt phòng</h2>
+                        <div class="bt-option">
+                            <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            <a asp-controller="Hotel" asp-action="Index">Khách sạn</a>
+                            <a href="#">Phòng</a>
+                            <span>Đặt phòng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+<div style="display: flex;margin: 0 15px 50px 0">
+    <!-- Form-left -->
+    <div class="card " style="flex: 70%;margin-right: 50px;margin: 0 0 0 150px;">
+        <div class="card-body">
+            <h5 class="card-title">Điền thông tin liên hệ</h5>
+
+            <!-- Multi Columns Form -->
+            <form class="row g-3"   asp-controller="Booking" asp-action="Booking" method="post">
+                <input type="hidden" asp-for="BookingId" />
+                <input type="hidden" asp-for="RoomId" value="@Room.RoomId" />
+                <input type="hidden" asp-for="StatusId" value="1" />
+                <div class="col-md-12">
+                    <label class="form-label">Họ và Tên</label>
+                    <input type="text" asp-for="CustomerName" class="form-control" >
+                    <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.CustomerName)</span>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" asp-for="CustomerEmail" class="form-control" >
+                    <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.CustomerEmail)</span>
+                </div>
+                <div class="col-md-6">
+                    <label  class="form-label">Số điện thoại</label>
+                    <input type="text" asp-for="CustomerPhone" class="form-control" >
+                    <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.CustomerPhone)</span>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Ngày nhận phòng</label>
+                    <div class="col-sm-14">
+                    <input type="date" asp-for="BookingStartDate" class="form-control" id="start-date">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label  class="form-label">Ngày trả phòng</label>
+                    <div class="col-sm-14">
+                        <input type="date" asp-for="BookingEndDate" class="form-control" id="end-date">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label  class="form-label">Phương thức thanh toán</label>
+                    <select  class="form-select" asp-for="PaymentId" asp-items="ViewBag.KieuThanhToan">
+                        <option disabled selected >Chọn phương thức thanh toán</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label">Tổng tiền </label>
+                    <input id="total-money" type="text" class="form-control" asp-for="BookingTotalMoney" readonly>
+                </div>
+                <div class="text-center" >
+                    <button type="submit" class="btn btn-primary">Xác Nhận</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form><!-- End Multi Columns Form -->
+
+        </div>
+    </div>
+
+    <!-- Form-right -->
+    <div class="card" style="flex: 30%; margin: 0 150px 0 15px;">
+        <img src="~/img/room/@Room.RoomImage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Room.Hotel.HotelName</h5>
+            <h5 class="card-text" >Phòng: <span style="font-weight: bold;">@Room.RoomName</span></h5>
+            <p class="card-text" >Giá Phòng: <span style="color: orange;">@Room.RoomPrice.Value.ToString("#,##0") VND</span>/đêm</p>
+            <p class="card-text" >Giường: <span style="font-weight: bold;">@Room.RoomBed</span></p>
+            <p class="card-text" >Kích thước: <span style="font-weight: bold;">@Room.RoomSize</span>m2</p>
+            <p class="card-text" >Tiện ích: <span style="font-weight: bold;">@Room.RoomUtilities</span></p>
+            <p class="card-text"> Gọi 0372 981 353 để được hỗ trợ 24/7</p>
+        </div>
+    </div>
+</div>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="~/assets/css/style.css" rel="stylesheet">
+   <!-- Vendor JS Files -->
+  <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="~/assets/vendor/chart.js/chart.min.js"></script>
+  <script src="~/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="~/assets/vendor/quill/quill.min.js"></script>
+  <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="~/assets/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#start-date, #end-date").on("input", function () {
+            var startDate = new Date($("#start-date").val());
+            var endDate = new Date($("#end-date").val());
+            var currentDate = new Date();
+
+            if (startDate && endDate) {
+                if (startDate < currentDate && endDate < currentDate) {
+                    alert("Ngày nhận phòng và ngày trả phòng phải lớn hơn ngày hiện tại");
+                } else if (startDate > endDate) {
+                    alert("Ngày nhận phòng không được lớn hơn ngày trả phòng");
+                } else {
+                    var timeDiff = endDate.getTime() - startDate.getTime();
+                    var numDays = Math.round(timeDiff / (1000 * 3600 * 24));
+
+                    var roomPrice = @Room.RoomPrice.Value;
+                    var totalMoney = numDays * roomPrice;
+                    $("#total-money").val(totalMoney);
+                }
+            
+            }
+        });
+    });
+</script>
+
+

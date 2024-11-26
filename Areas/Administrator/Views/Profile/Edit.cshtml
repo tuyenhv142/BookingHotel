@@ -1,0 +1,92 @@
+﻿@model BookingHotel.Models.Account
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="pagetitle">
+    <h1>Profile</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item">Account</li>
+            <li class="breadcrumb-item"><a asp-controller="Profile" asp-action="Index">Profile</a></li>
+            <li class="breadcrumb-item active">Edit Profile</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+<section class="section profile">
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                    <img src="~/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                    <h2>@Model.AccountName</h2>
+                    <div class="social-links mt-2">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-body pt-3">
+                    <form asp-controller="Profile" asp-action="Edit">
+                        <input  type="hidden"  asp-for="AccountId">
+                        <input  type="hidden"  asp-for="AccountPassword">
+                        <input  type="hidden" asp-for="PositionId" />
+
+                        <div class="row mb-3">
+                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input  type="text" class="form-control" asp-for="AccountName">
+                                <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountName)</span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
+                            <div class="col-md-8 col-lg-9">
+                                <textarea class="form-control"  style="height:200px" asp-for="AccountAbout"></textarea>
+                                <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountAbout)</span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input  type="text" class="form-control"  asp-for="AccountAddress">
+                                <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountAddress)</span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input  type="text" class="form-control"  asp-for="AccountPhone">
+                                <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountPhone)</span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input type="email" class="form-control"  asp-for="AccountEmail">
+                                <span class="badge border-danger border-1 text-danger">@Html.ValidationMessageFor(model => model.AccountEmail)</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form><!-- End Profile Edit Form -->
+                </div><!-- End Bordered Tabs -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
